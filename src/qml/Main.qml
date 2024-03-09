@@ -21,4 +21,13 @@ ApplicationWindow {
        onPressed: {
        }
    }
+
+   ListView {
+       anchors.fill: parent
+       model: CardModel
+       delegate: Text {
+           text: name
+       }
+   }
 }
+

@@ -1,13 +1,14 @@
 #include "App.h"
 
-App::App(int argc, char *argv[]) : m_app(argc,argv)
+App::App(int argc, char* argv[])
+    : m_app(argc, argv)
 {
-
 }
 
 int App::run()
 {
     m_engine.rootContext()->setContextProperty("App", this);
+    m_engine.rootContext()->setContextProperty("CardModel", &m_model);
 
     initSignals();
 
@@ -24,6 +25,4 @@ void App::initSignals()
         &m_app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-
-
 }

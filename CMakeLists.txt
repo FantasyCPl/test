@@ -12,6 +12,7 @@ qt_add_executable(appTest
     src/main.cpp
     src/App.h
     src/App.cpp
+    src/model/CardModel.h src/model/CardModel.cpp
     
 )
 
