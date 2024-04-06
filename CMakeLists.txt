@@ -13,7 +13,13 @@ qt_add_executable(appTest
     src/App.h
     src/App.cpp
     src/model/CardModel.h src/model/CardModel.cpp
-    
+    src/model/PlayerModel.h src/model/PlayerModel.cpp
+    src/TileImageProvider.h src/TileImageProvider.cpp
+    src/player/Player.h src/player/Player.cpp
+    src/player/Defect.h src/player/Defect.cpp
+    src/player/Paladin.h src/player/Paladin.cpp
+    src/player/Silent.h src/player/Silent.cpp
+    src/player/Watcher.h src/player/Watcher.cpp
 )
 
 target_link_libraries(appTest
@@ -32,3 +38,21 @@ qt6_add_resources(appTest "qml"
     src/qml/Main.qml
     qtquickcontrols2.conf
 )
+
+qt6_add_resources(appTest "scenes"
+    FILES
+    src/qml/scenes/ChoosePlayerScene.qml
+)
+
+qt6_add_resources(appTest "assets"
+    FILES
+    "assets/IMG_5479.jfif"
+    "assets/Paladin.png"
+    "assets/Defect.png"
+    "assets/Silent.png"
+    "assets/Watcher.png"
+
+)
+
+
+

@@ -6,6 +6,9 @@
 #include <QQmlContext>
 
 #include "model/CardModel.h"
+#include "model/PlayerModel.h"
+
+#include "TileImageProvider.h"
 
 class App : public QObject
 {
@@ -19,6 +22,8 @@ private:
 
 private:
     CardModel m_model;
+    PlayerModel m_playerModel;
     QGuiApplication m_app;
     QQmlApplicationEngine m_engine;
+    TileImageProvider m_imgProvider;
 };

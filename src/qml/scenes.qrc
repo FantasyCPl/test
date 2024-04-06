@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/scenes">
+        <file>scenes/ChoosePlayerScene.qml</file>
+    </qresource>
+</RCC>

@@ -9,6 +9,9 @@ int App::run()
 {
     m_engine.rootContext()->setContextProperty("App", this);
     m_engine.rootContext()->setContextProperty("CardModel", &m_model);
+    m_engine.rootContext()->setContextProperty("PlayerModel", &m_playerModel);
+
+    m_engine.addImageProvider("assets", &m_imgProvider);
 
     initSignals();
 
