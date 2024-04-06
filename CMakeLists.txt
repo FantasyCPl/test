@@ -8,6 +8,8 @@ find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
 
+include_directories(${PROJECT_SOURCE_DIR}/src)
+
 qt_add_executable(appTest
     src/main.cpp
     src/App.h

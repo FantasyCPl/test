@@ -4,14 +4,7 @@
 #include <QObject>
 #include <memory>
 
-#include "../player/Player.h"
-
-struct PlayerModelItem
-{
-    QString name;
-    QString photoLink;
-    int strength;
-};
+#include "player/Player.h"
 
 class PlayerModel : public QAbstractListModel
 {
@@ -29,6 +22,5 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    // std::vector<PlayerModelItem> m_data;
     std::vector<std::shared_ptr<Player>> m_data;
 };
