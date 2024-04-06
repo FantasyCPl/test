@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls 2.15
 import "qrc:/src/qml/scenes"
-import com.game 1.0
+import com.game.Scene 1.0
 
 
 ApplicationWindow {
@@ -13,14 +13,23 @@ ApplicationWindow {
 
     Loader {
         anchors.fill: parent
-        source: APP.scene === APP.ChoosePlayer ? "scenes/ChoosePlayerScene.qml" : "scenes/RoomScene.qml"
-
-
+        source: changeScene(App.scene)
     }
+
     Component.onCompleted: {
-        console.log("onCompleted",APP.ChoosePlayer,APP.Room)
-        APP.setScene(APP.Room)
-        console.log("onCompleted",APP.scene)
+        App.setScene(AppScene.ChoosePlayer)
+    }
+
+    function changeScene(scene) {
+        switch(scene) {
+        case AppScene.ChoosePlayer:
+            return "scenes/ChoosePlayerScene.qml"
+        case AppScene.Room:
+            return "scenes/RoomScene.qml"
+        default:
+            break
+        }
+        return ""
     }
 }
 
