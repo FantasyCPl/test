@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls 2.15
 import "qrc:/src/qml/scenes"
+import com.game 1.0
 
 
 ApplicationWindow {
@@ -12,9 +13,15 @@ ApplicationWindow {
 
     Loader {
         anchors.fill: parent
-        source: "scenes/ChoosePlayerScene.qml"
-    }
+        source: APP.scene === APP.ChoosePlayer ? "scenes/ChoosePlayerScene.qml" : "scenes/RoomScene.qml"
 
+
+    }
+    Component.onCompleted: {
+        console.log("onCompleted",APP.ChoosePlayer,APP.Room)
+        APP.setScene(APP.Room)
+        console.log("onCompleted",APP.scene)
+    }
 }
 
 

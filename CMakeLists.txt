@@ -22,6 +22,7 @@ qt_add_executable(appTest
     src/player/Paladin.h src/player/Paladin.cpp
     src/player/Silent.h src/player/Silent.cpp
     src/player/Watcher.h src/player/Watcher.cpp
+    src/model/RoomModel.h src/model/RoomModel.cpp
 )
 
 target_link_libraries(appTest
@@ -44,6 +45,7 @@ qt6_add_resources(appTest "qml"
 qt6_add_resources(appTest "scenes"
     FILES
     src/qml/scenes/ChoosePlayerScene.qml
+    src/qml/scenes/RoomScene.qml
 )
 
 qt6_add_resources(appTest "assets"
