@@ -21,7 +21,8 @@ public:
         ChoosePlayer = 1,
         Room = 2,
     };
-    Q_ENUMS(Scene)
+    Q_ENUM(Scene)
+
     App(int argc, char* argv[]);
     int run();
 

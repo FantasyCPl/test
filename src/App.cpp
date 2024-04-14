@@ -7,11 +7,10 @@ App::App(int argc, char* argv[])
 
 int App::run()
 {
-    m_engine.rootContext()->setContextProperty("APP", this);
+    qmlRegisterType<App>("com.game.Scene", 1, 0, "AppScene");
+    m_engine.rootContext()->setContextProperty("App", this);
     m_engine.rootContext()->setContextProperty("CardModel", &m_model);
     m_engine.rootContext()->setContextProperty("PlayerModel", &m_playerModel);
-
-    qmlRegisterType<App>("com.game", 1, 0, "AppScene");
 
     m_engine.addImageProvider("assets", &m_imgProvider);
 
